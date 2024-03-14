@@ -41,6 +41,8 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -155,11 +157,31 @@
             label10.TabIndex = 11;
             label10.Text = "Resultado";
             // 
+            // button1
+            // 
+            button1.Location = new Point(363, 510);
+            button1.Name = "button1";
+            button1.Size = new Size(122, 22);
+            button1.TabIndex = 12;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(491, 510);
+            button2.Name = "button2";
+            button2.Size = new Size(122, 22);
+            button2.TabIndex = 13;
+            button2.Text = "Favoritar";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // BuscaRacas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(625, 544);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -195,5 +217,7 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private Button button1;
+        private Button button2;
     }
 }

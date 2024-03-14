@@ -12,5 +12,11 @@ namespace CatAsService
             BuscaRacas BR = new BuscaRacas();
             BR.ShowDialog();
         }
+
+        private void meusFavoritosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarRacasFavoritas BRF = new BuscarRacasFavoritas();
+            BRF.ShowDialog();
+        }
     }
 }

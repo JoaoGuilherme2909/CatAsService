@@ -78,6 +78,7 @@
             meusFavoritosToolStripMenuItem.Name = "meusFavoritosToolStripMenuItem";
             meusFavoritosToolStripMenuItem.Size = new Size(97, 20);
             meusFavoritosToolStripMenuItem.Text = "Meus favoritos";
+            meusFavoritosToolStripMenuItem.Click += meusFavoritosToolStripMenuItem_Click;
             // 
             // WelcomeForm
             // 
