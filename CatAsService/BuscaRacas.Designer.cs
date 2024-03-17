@@ -79,7 +79,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(172, 116);
+            label4.Location = new Point(12, 114);
             label4.Name = "label4";
             label4.Size = new Size(77, 15);
             label4.TabIndex = 3;
@@ -88,7 +88,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(172, 153);
+            label5.Location = new Point(12, 153);
             label5.Name = "label5";
             label5.Size = new Size(87, 15);
             label5.TabIndex = 4;
@@ -97,7 +97,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(172, 182);
+            label6.Location = new Point(12, 182);
             label6.Name = "label6";
             label6.Size = new Size(47, 15);
             label6.TabIndex = 5;
@@ -106,7 +106,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(172, 213);
+            label7.Location = new Point(12, 213);
             label7.Name = "label7";
             label7.Size = new Size(58, 15);
             label7.TabIndex = 6;
@@ -115,16 +115,17 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(95, 245);
+            pictureBox1.Location = new Point(3, 261);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(431, 243);
+            pictureBox1.Size = new Size(396, 243);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(262, 114);
+            comboBox1.Items.AddRange(new object[] { "pelo curto inglês", "Maine coon" });
+            comboBox1.Location = new Point(108, 111);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(137, 23);
             comboBox1.TabIndex = 8;
@@ -133,7 +134,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(265, 153);
+            label8.Location = new Point(108, 153);
             label8.Name = "label8";
             label8.Size = new Size(59, 15);
             label8.TabIndex = 9;
@@ -142,7 +143,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(225, 182);
+            label9.Location = new Point(108, 182);
             label9.Name = "label9";
             label9.Size = new Size(59, 15);
             label9.TabIndex = 10;
@@ -151,7 +152,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(236, 213);
+            label10.Location = new Point(108, 213);
             label10.Name = "label10";
             label10.Size = new Size(59, 15);
             label10.TabIndex = 11;
@@ -165,6 +166,7 @@
             button1.TabIndex = 12;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

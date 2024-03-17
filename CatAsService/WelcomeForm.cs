@@ -1,3 +1,5 @@
+using CatAsService.api;
+
 namespace CatAsService
 {
     public partial class WelcomeForm : Form
