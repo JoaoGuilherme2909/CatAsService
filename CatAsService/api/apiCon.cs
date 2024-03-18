@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using QuickType;
 using RestSharp;
 using System;
 
@@ -6,7 +7,7 @@ namespace CatAsService.api
 {
     class ApiCon
     {
-        public static CatModel apiGet(string breedId)
+        public static List<BreedsJson> apiGet(string breedId)
         {
             string api_key = "live_9gfXsEfLLdyt66booQC0ik36OMebG5sDtmicv3OpciCQUVsXOFawdeKyrFygM86U";
             RestClient client = new RestClient($"https://api.thecatapi.com/v1/images/search?breed_ids={breedId}");
@@ -16,9 +17,8 @@ namespace CatAsService.api
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                List<CatModel> content = JsonConvert.DeserializeObject<List<CatModel>>(response.Content.ToString());
-                return content[0];
-              
+                List<BreedsJson> content = JsonConvert.DeserializeObject<List<BreedsJson>>(response.Content.ToString());
+                return content;
             }
             else
             {

@@ -71,7 +71,7 @@
             label3.BorderStyle = BorderStyle.Fixed3D;
             label3.Location = new Point(12, 91);
             label3.Name = "label3";
-            label3.Size = new Size(601, 2);
+            label3.Size = new Size(589, 2);
             label3.TabIndex = 2;
             label3.Text = "label3";
             label3.Click += label3_Click;
@@ -152,15 +152,17 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.FlatStyle = FlatStyle.System;
             label10.Location = new Point(108, 213);
+            label10.MaximumSize = new Size(550, 0);
             label10.Name = "label10";
-            label10.Size = new Size(59, 15);
+            label10.Size = new Size(59, 45);
             label10.TabIndex = 11;
-            label10.Text = "Resultado";
+            label10.Text = "Resultado\r\n\r\n";
             // 
             // button1
             // 
-            button1.Location = new Point(363, 510);
+            button1.Location = new Point(351, 510);
             button1.Name = "button1";
             button1.Size = new Size(122, 22);
             button1.TabIndex = 12;
@@ -170,7 +172,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(491, 510);
+            button2.Location = new Point(479, 510);
             button2.Name = "button2";
             button2.Size = new Size(122, 22);
             button2.TabIndex = 13;
@@ -181,7 +183,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(625, 544);
+            ClientSize = new Size(613, 544);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label10);
@@ -196,8 +198,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "BuscaRacas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Buscar Raças";
             Load += BuscaRacas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
