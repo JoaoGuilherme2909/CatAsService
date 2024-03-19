@@ -124,7 +124,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "pelo curto inglês", "Maine coon" });
+            comboBox1.Items.AddRange(new object[] { "pelo curto inglês", "Maine coon", "Bengal", "Cyprus" });
             comboBox1.Location = new Point(108, 111);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(137, 23);
@@ -178,6 +178,7 @@
             button2.TabIndex = 13;
             button2.Text = "Favoritar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // BuscaRacas
             // 

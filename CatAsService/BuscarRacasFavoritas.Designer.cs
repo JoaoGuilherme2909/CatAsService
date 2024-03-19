@@ -76,12 +76,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(286, 418);
+            button1.Location = new Point(302, 413);
             button1.Name = "button1";
-            button1.Size = new Size(127, 24);
+            button1.Size = new Size(111, 25);
             button1.TabIndex = 4;
-            button1.Text = "Excluir Favorito";
+            button1.Text = "Excluir favorito";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BuscarRacasFavoritas
             // 
@@ -96,6 +97,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "BuscarRacasFavoritas";
             Text = "Buscar Raças Favoritas";
+            Load += BuscarRacasFavoritas_Load;
             ResumeLayout(false);
             PerformLayout();
         }
