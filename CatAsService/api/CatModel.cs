@@ -1,4 +1,4 @@
-﻿namespace QuickType
+﻿namespace api
 {
 
     using System.Collections.Generic;

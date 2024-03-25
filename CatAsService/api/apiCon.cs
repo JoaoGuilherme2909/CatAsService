@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using QuickType;
+using api;
 using RestSharp;
 using System;
 
@@ -7,27 +7,20 @@ namespace CatAsService.api
 {
     class ApiCon
     {
-        private static string api_key = "YOUR_KEY";
+        private string api_key = "live_9gfXsEfLLdyt66booQC0ik36OMebG5sDtmicv3OpciCQUVsXOFawdeKyrFygM86U";
         
-        public static List<BreedsJson> apiGet(string breedId)
+        public List<BreedsJson> apiGet(string breedId)
         {
             RestClient client = new RestClient("https://api.thecatapi.com/v1/images/search?breed_ids=" + breedId);
             RestRequest request = new RestRequest("", Method.Get);
             request.AddHeader("x-api-key", api_key);
             RestResponse response = client.Execute(request);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                List<BreedsJson> content = JsonConvert.DeserializeObject<List<BreedsJson>>(response.Content.ToString());
-                return content;
-            }
-            else
-            {
-                return null;
-            }
+            List<BreedsJson> content = JsonConvert.DeserializeObject<List<BreedsJson>>(response.Content.ToString());
+            return content;
         }
 
-        public static void ApiPost(BreedsJson raca, string id)
+        public void ApiPost(BreedsJson raca, string id)
         {
             RestClient client = new RestClient("https://api.thecatapi.com/v1/favourites");
             RestRequest request = new RestRequest("", Method.Post);
@@ -47,44 +40,29 @@ namespace CatAsService.api
 
         }
 
-        public static List<Favourites> GetFavourites()
+        public List<Favourites> GetFavourites()
         {
             RestClient client = new RestClient("https://api.thecatapi.com/v1/favourites");
             RestRequest request = new RestRequest("", Method.Get);
             request.AddHeader("x-api-key", api_key);
             RestResponse response = client.Execute(request);
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                List<Favourites> content = JsonConvert.DeserializeObject<List<Favourites>>(response.Content.ToString());
-                return content;
-            }
-            else
-            {
-                return null;
-            }
-
+            List<Favourites> content = JsonConvert.DeserializeObject<List<Favourites>>(response.Content.ToString());
+            return content;
         }
 
-        public static BreedsJson apiGetbyImage(string imageId)
+        public BreedsJson apiGetbyImage(string imageId)
         {
             RestClient client = new RestClient("https://api.thecatapi.com/v1/images/" + imageId);
             RestRequest request = new RestRequest("", Method.Get);
             request.AddHeader("x-api-key", api_key);
             RestResponse response = client.Execute(request);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                BreedsJson content = JsonConvert.DeserializeObject<BreedsJson>(response.Content.ToString());
-                return content;
-            }
-            else
-            {
-                return null;
-            }
+            BreedsJson content = JsonConvert.DeserializeObject<BreedsJson>(response.Content.ToString());
+            return content;
+            
         }
 
-        public static void DeleteFavourites(string id)
+        public void DeleteFavourites(string id)
         {
             RestClient client = new RestClient($"https://api.thecatapi.com/v1/favourites?sub_id={id}");
             RestRequest request = new RestRequest("", Method.Delete);

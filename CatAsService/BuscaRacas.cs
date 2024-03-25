@@ -1,13 +1,14 @@
-﻿using CatAsService.api;
-using Newtonsoft.Json;
-using QuickType;
+﻿using Newtonsoft.Json;
+using api;
+using CatAsService.api;
 
 namespace CatAsService
 {
     public partial class BuscaRacas : Form
     {
 
-        BreedsJson raca = new BreedsJson();
+        private BreedsJson raca = new BreedsJson();
+        private ApiCon apicon = new ApiCon();
 
         public BuscaRacas()
         {
@@ -28,7 +29,7 @@ namespace CatAsService
         {
             if (comboBox1.Text == "pelo curto inglês")
             {
-                List<BreedsJson> content = ApiCon.apiGet("bsho");
+                List<BreedsJson> content = apicon.apiGet("bsho");
                 raca = content[0];
                 foreach (BreedsJson breed in content)
                 {
@@ -41,7 +42,7 @@ namespace CatAsService
             }
             else if (comboBox1.Text == "Maine coon")
             {
-                List<BreedsJson> content = ApiCon.apiGet("mcoo");
+                List<BreedsJson> content = apicon.apiGet("mcoo");
                 raca = content[0];
                 foreach (BreedsJson breed in content)
                 {
@@ -53,7 +54,7 @@ namespace CatAsService
             }
             else if(comboBox1.Text == "Bengal")
             {
-                List<BreedsJson> content = ApiCon.apiGet("beng");
+                List<BreedsJson> content = apicon.apiGet("beng");
                 raca = content[0];
                 foreach (BreedsJson breed in content)
                 {
@@ -64,7 +65,7 @@ namespace CatAsService
                 }
             }else if (comboBox1.Text == "Cyprus")
             {
-                List<BreedsJson> content = ApiCon.apiGet("cypr");
+                List<BreedsJson> content = apicon.apiGet("cypr");
                 raca = content[0];
                 foreach (BreedsJson breed in content)
                 {
@@ -74,18 +75,22 @@ namespace CatAsService
 
                 }
             }
+            else
+            {
+                MessageBox.Show("Escolha uma raça", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (raca != null)
             {
-                List<Favourites> favourites = ApiCon.GetFavourites();
-                ApiCon.ApiPost(raca, (favourites.Count + 1).ToString());
+                List<Favourites> favourites = apicon.GetFavourites();
+                apicon.ApiPost(raca, (favourites.Count + 1).ToString());
             }
             else
             {
-                MessageBox.Show("Erro: Não foi selecionada nenhuma raça");
+                MessageBox.Show("Não foi selecionada nenhuma raça", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
