@@ -7,7 +7,7 @@ namespace CatAsService.api
 {
     class ApiCon
     {
-        private string api_key = "live_9gfXsEfLLdyt66booQC0ik36OMebG5sDtmicv3OpciCQUVsXOFawdeKyrFygM86U";
+        private string api_key = "your_api_key";
         
         public List<BreedsJson> apiGet(string breedId)
         {
